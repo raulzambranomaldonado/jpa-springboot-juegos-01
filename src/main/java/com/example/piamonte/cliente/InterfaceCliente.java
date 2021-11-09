@@ -5,7 +5,7 @@
  */
 package com.example.piamonte.cliente;
 
-import com.example.piamonte.Games;
+
 import org.springframework.data.repository.CrudRepository;
 
 /**
