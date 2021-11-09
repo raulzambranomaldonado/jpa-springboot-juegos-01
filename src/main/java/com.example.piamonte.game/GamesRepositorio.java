@@ -13,14 +13,17 @@ public class GamesRepositorio {
     private InterfaceGames crud;
     public List<Games> getAll(){
         
-      List<Games> miListadoDeJuegos = (List<Games>) crud.findAll();
-      return miListadoDeJuegos;
+     return (List<Games>) crud.findAll();
+      // List<Games> miListadoDeJuegos = (List<Games>) crud.findAll();
+     // return miListadoDeJuegos;
      }
     
     public Optional<Games> getGames(int id){
       return crud.findById(id);
     }
-    public Games save(Games games){
+   public Games save(Games games){
       return crud.save(games);
     }
-}
+  
+ 
+ }

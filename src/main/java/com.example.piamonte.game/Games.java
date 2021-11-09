@@ -25,12 +25,12 @@ import com.example.piamonte.reservaciones.Reservacion;
  * @author invitad_o
  */
 @Entity
-@Table(name="game")
+@Table(name="Game")
 public class Games {
     @Id
-    //@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @GeneratedValue
-    private Integer Idgames;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    //@GeneratedValue
+    private Integer idGames;
     private String developer;
     private Integer year;  
     private String name;
@@ -38,8 +38,8 @@ public class Games {
     
     @ManyToOne
     @JoinColumn(name="id")
-    @JsonIgnoreProperties("categoria")
-    private Categoria  categoria;
+    @JsonIgnoreProperties("category")
+    private Categoria  category;
 
      @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "game")
     @JsonIgnoreProperties({"game","client"})
@@ -49,12 +49,12 @@ public class Games {
     @JsonIgnoreProperties({"game","messages"})
     public List<Reservacion> reservations;
 
-    public Integer getIdgames() {
-        return Idgames;
+    public Integer getIdGames() {
+        return idGames;
     }
 
-    public void setIdgames(Integer Idgames) {
-        this.Idgames = Idgames;
+    public void setIdGames(Integer idGames) {
+        this.idGames = idGames;
     }
 
     public String getDeveloper() {
@@ -89,12 +89,12 @@ public class Games {
         this.description = description;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public Categoria getCategory() {
+        return category;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setCategory(Categoria category) {
+        this.category = category;
     }
 
     public List<Mensaje> getMessages() {
@@ -112,6 +112,8 @@ public class Games {
     public void setReservations(List<Reservacion> reservations) {
         this.reservations = reservations;
     }
+
+     
 
     
 }

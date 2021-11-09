@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.example.piamonte;
+  
+package com.example.piamonte.cliente;
 
 
 import com.example.piamonte.Games;
+import com.example.piamonte.cliente.Cliente;
+import com.example.piamonte.cliente.ServiciosCliente;
 import java.util.List;
 import java.util.Optional;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
+ 
 @RestController
-@RequestMapping("/api/Game")
-public class GamesWeb {
+@RequestMapping("/api/Client")
+public class ClienteWeb {
      
    
     @GetMapping("/holaMundo")
@@ -32,28 +28,25 @@ public class GamesWeb {
     }
     
     @Autowired
-    private ServiciosGames servicios;
+    private ServiciosCliente servicios;
     @GetMapping("all")
-    public List<Games> getAll(){
+    public List<Cliente> getAll(){
         return servicios.getAll();
     }
  
 
 @GetMapping("/{id}")
-public Optional<Games> getGames(@PathVariable("id") int idGames){
-return servicios.getGames(idGames);
+public Optional<Cliente> getCliente(@PathVariable("id") int idCliente){
+return servicios.getCliente(idCliente);
 }
 
 @PostMapping("/save")
 @ResponseStatus(HttpStatus.CREATED)
-public Games save(@RequestBody Games games){
-    System.out.print("game");
-        System.out.print(games);
+public Cliente save(@RequestBody Cliente cliente){
+    System.out.print("cliente");
+        System.out.print(cliente);
          
   //return games;
-   return servicios.save(games);
+   return servicios.save(cliente);
 }
-
-
-
 }

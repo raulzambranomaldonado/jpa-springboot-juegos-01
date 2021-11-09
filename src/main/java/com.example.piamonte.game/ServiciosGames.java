@@ -31,17 +31,20 @@ public class ServiciosGames {
     }
     
     public Games save(Games games){
-        if(games.getIdgames()==null){
+        if(games.getIdGames()==null){
             return metodosCrud.save(games);
         }else{
-            Optional<Games> evt=metodosCrud.getGames(games.getIdgames());
+            Optional<Games> evt=metodosCrud.getGames(games.getIdGames());
             if(evt.isEmpty()){
                 return metodosCrud.save(games);
             }else{
                 return games;
             }
-        }
+       }
         
     }
     
+ 
+   
+
 }

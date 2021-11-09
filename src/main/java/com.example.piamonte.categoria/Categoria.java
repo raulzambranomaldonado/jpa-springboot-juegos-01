@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="categoria") 
+@Table (name="category") 
 public class Categoria {
     @Id
     @GeneratedValue
@@ -25,8 +25,8 @@ public class Categoria {
     //@JsonIgnoreProperties("categoria")
     //private List<Games> games;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="categoria")
-    @JsonIgnoreProperties({"categoria","message"})
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="category")
+    @JsonIgnoreProperties({"category","message"})
     private List<Games> games;
 
     public Integer getId() {

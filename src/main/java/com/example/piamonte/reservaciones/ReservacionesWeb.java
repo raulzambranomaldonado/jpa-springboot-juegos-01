@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.example.piamonte;
+ 
+ 
+package com.example.piamonte.reservaciones;
 
 
 import com.example.piamonte.Games;
@@ -22,38 +19,36 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/Game")
-public class GamesWeb {
+@RequestMapping("/api/reservacion")
+public class ReservacionesWeb {
      
    
     @GetMapping("/holaMundo")
     public String hola(){
-      return "hola";    
+      return "hola mensaje";    
     }
     
     @Autowired
-    private ServiciosGames servicios;
+    private ServiciosReservaciones servicios;
     @GetMapping("all")
-    public List<Games> getAll(){
+    public List<Reservacion> getAll(){
         return servicios.getAll();
     }
  
 
 @GetMapping("/{id}")
-public Optional<Games> getGames(@PathVariable("id") int idGames){
-return servicios.getGames(idGames);
+public Optional<Reservacion> getRservacion(@PathVariable("id") int idReservacion){
+return servicios.getReservacion(idReservacion);
 }
 
 @PostMapping("/save")
 @ResponseStatus(HttpStatus.CREATED)
-public Games save(@RequestBody Games games){
-    System.out.print("game");
-        System.out.print(games);
+public Reservacion save(@RequestBody Reservacion reservacion){
+    System.out.print("reservacion");
+        System.out.print(reservacion);
          
   //return games;
-   return servicios.save(games);
+   return servicios.save(reservacion);
+}
 }
 
-
-
-}
