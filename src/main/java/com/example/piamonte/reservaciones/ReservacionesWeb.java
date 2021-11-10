@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,7 +39,8 @@ public Optional<Reservacion> getRservacion(@PathVariable("id") int idReservacion
 return servicios.getReservacion(idReservacion);
 }
 
-@PostMapping("/all")
+ @RequestMapping(value = "/all", produces = "application/json", 
+  method = RequestMethod.POST)
 @ResponseStatus(HttpStatus.CREATED)
 public Reservacion save(@RequestBody Reservacion reservacion){
     System.out.print("reservacion");

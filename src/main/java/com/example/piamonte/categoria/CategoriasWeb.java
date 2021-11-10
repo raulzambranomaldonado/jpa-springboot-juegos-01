@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author invitad_o
  */
 @RestController
-@RequestMapping("/api/Category")
+@RequestMapping("/api/Category/")
 public class CategoriasWeb {
     
     @GetMapping("/holaMundos")
@@ -41,18 +42,19 @@ public class CategoriasWeb {
     }
  
     @GetMapping("/{id}")
-public Optional<Categoria> getCategoria(@PathVariable("id") int idCategoria){
-return servicios.getCategoria(idCategoria);
-}
+    public Optional<Categoria> getCategoria(@PathVariable("id") int idCategoria){
+    return servicios.getCategoria(idCategoria);
+}   
 
-@PostMapping("/all")
-@ResponseStatus(HttpStatus.CREATED)
-public Categoria save(@RequestBody Categoria categoria){
-    System.out.print("categoria");
-        System.out.print(categoria);
-         
-  //return games;
-   return servicios.save(categoria);
-}
+    @RequestMapping(value = "all", produces = "application/json", 
+  method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Categoria save(@RequestBody Categoria categoria){
+        System.out.print("categoria");
+            System.out.print(categoria);
+
+      //return games;
+       return servicios.save(categoria);
+    }
 
 }
