@@ -14,7 +14,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
+@Component("category")
 @Entity
 @Table (name="category") 
 public class Categoria {

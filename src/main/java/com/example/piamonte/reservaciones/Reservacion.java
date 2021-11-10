@@ -5,7 +5,7 @@
  */
 package com.example.piamonte.reservaciones;
 
-import com.example.piamonte.game.Games;
+
 import com.example.piamonte.cliente.Cliente;
 import com.example.piamonte.game.Games;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -17,11 +17,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author invitad_o
  */
+@Component("reservation")
 @Entity
 @Table(name ="reservation")
  

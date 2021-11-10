@@ -16,11 +16,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.example.piamonte.reservaciones.Reservacion;
 import com.example.piamonte.mensaje.Mensaje;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author invitad_o
  */
+@Component("client")
 @Entity
 @Table(name ="client")
 public class Cliente {

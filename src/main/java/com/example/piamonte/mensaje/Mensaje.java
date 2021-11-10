@@ -16,11 +16,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author invitad_o
  */
+@Component("message")
 @Entity
 @Table(name = "message")
 public class Mensaje {

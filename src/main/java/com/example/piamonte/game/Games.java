@@ -20,13 +20,15 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import com.example.piamonte.mensaje.Mensaje;
 import com.example.piamonte.reservaciones.Reservacion;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author invitad_o
  */
+@Component("game")
 @Entity
-@Table(name="Game")
+@Table(name="game")
 public class Games {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
