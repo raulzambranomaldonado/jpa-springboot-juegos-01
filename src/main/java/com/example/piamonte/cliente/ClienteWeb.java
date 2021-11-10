@@ -2,9 +2,6 @@
 package com.example.piamonte.cliente;
 
 
-import com.example.piamonte.Games;
-import com.example.piamonte.cliente.Cliente;
-import com.example.piamonte.cliente.ServiciosCliente;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,11 @@
- 
- 
-package com.example.piamonte.reservaciones;
+package com.example.piamonte.categoria;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 
 
 import java.util.List;
@@ -15,37 +20,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ *
+ * @author invitad_o
+ */
 @RestController
-@RequestMapping("/api/reservacion")
-public class ReservacionesWeb {
-     
-   
-    @GetMapping("/holaMundo")
+@RequestMapping("/api/Category")
+public class CategoriasWeb {
+    
+    @GetMapping("/holaMundos")
     public String hola(){
-      return "hola mensaje";    
+      return "hola raul ";    
     }
     
-    @Autowired
-    private ServiciosReservaciones servicios;
+     @Autowired
+    private ServiciosCategoria servicios;
     @GetMapping("all")
-    public List<Reservacion> getAll(){
+    public List<Categoria> getAll(){
         return servicios.getAll();
     }
  
-
-@GetMapping("/{id}")
-public Optional<Reservacion> getRservacion(@PathVariable("id") int idReservacion){
-return servicios.getReservacion(idReservacion);
+    @GetMapping("/{id}")
+public Optional<Categoria> getCategoria(@PathVariable("id") int idCategoria){
+return servicios.getCategoria(idCategoria);
 }
 
 @PostMapping("/save")
 @ResponseStatus(HttpStatus.CREATED)
-public Reservacion save(@RequestBody Reservacion reservacion){
-    System.out.print("reservacion");
-        System.out.print(reservacion);
+public Categoria save(@RequestBody Categoria categoria){
+    System.out.print("categoria");
+        System.out.print(categoria);
          
   //return games;
-   return servicios.save(reservacion);
-}
+   return servicios.save(categoria);
 }
 
+}

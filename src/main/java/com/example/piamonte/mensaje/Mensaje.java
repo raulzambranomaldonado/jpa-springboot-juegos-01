@@ -5,8 +5,9 @@
  */
 package com.example.piamonte.mensaje;
 
-import com.example.piamonte.Games;
+
 import com.example.piamonte.cliente.Cliente;
+import com.example.piamonte.game.Games;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

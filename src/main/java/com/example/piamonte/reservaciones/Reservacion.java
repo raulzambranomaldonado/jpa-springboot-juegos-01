@@ -5,8 +5,9 @@
  */
 package com.example.piamonte.reservaciones;
 
-import com.example.piamonte.Games;
+import com.example.piamonte.game.Games;
 import com.example.piamonte.cliente.Cliente;
+import com.example.piamonte.game.Games;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Date;
 import javax.persistence.Entity;

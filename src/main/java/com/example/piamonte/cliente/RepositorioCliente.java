@@ -2,9 +2,7 @@
  
 package com.example.piamonte.cliente;
 
-import com.example.piamonte.Games;
-import com.example.piamonte.cliente.Cliente;
-import com.example.piamonte.cliente.InterfaceCliente;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
  @Repository
 public class RepositorioCliente {
-    @Autowired
+    @Autowired(required=true)
     private InterfaceCliente crud;
     public List<Cliente> getAll(){
         
