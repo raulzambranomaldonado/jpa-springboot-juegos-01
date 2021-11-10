@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/reservacion")
+@RequestMapping("/api/Reservation")
 public class ReservacionesWeb {
      
    
@@ -47,5 +47,9 @@ public Reservacion save(@RequestBody Reservacion reservacion){
   //return games;
    return servicios.save(reservacion);
 }
+
+@GetMapping("/report-status")
+public String getReport(){
+return "{completed:3,cancelled:1}";}
 }
 
