@@ -26,9 +26,9 @@ import org.springframework.stereotype.Component;
  *
  * @author invitad_o
  */
-@Component("game")
+@Component("games")
 @Entity
-@Table(name="game")
+@Table(name="games")
 public class Games {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

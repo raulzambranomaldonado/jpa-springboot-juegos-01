@@ -17,7 +17,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan({"com.example.piamonte.categoria","com.example.piamonte.cliente","com.example.piamonte.mensaje","com.example.piamonte.reservaciones"})
+@ComponentScan({"com.example.piamonte.categoria","com.example.piamonte.cliente","com.example.piamonte.mensaje","com.example.piamonte.reservaciones","com.example.piamonte.game"})
 @SpringBootApplication
 public class PiamonteApplication {
 
