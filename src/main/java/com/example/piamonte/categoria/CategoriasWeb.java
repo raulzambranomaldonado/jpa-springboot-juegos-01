@@ -45,7 +45,7 @@ public Optional<Categoria> getCategoria(@PathVariable("id") int idCategoria){
 return servicios.getCategoria(idCategoria);
 }
 
-@PostMapping("/save")
+@PostMapping("/all")
 @ResponseStatus(HttpStatus.CREATED)
 public Categoria save(@RequestBody Categoria categoria){
     System.out.print("categoria");

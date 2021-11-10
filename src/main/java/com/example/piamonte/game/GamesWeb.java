@@ -31,7 +31,7 @@ public class GamesWeb {
     
     @Autowired
     private ServiciosGames servicios;
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Games> getAll(){
         return servicios.getAll();
     }
@@ -42,7 +42,7 @@ public Optional<Games> getGames(@PathVariable("id") int idGames){
 return servicios.getGames(idGames);
 }
 
-@PostMapping("/save")
+@PostMapping("/all")
 @ResponseStatus(HttpStatus.CREATED)
 public Games save(@RequestBody Games games){
     System.out.print("game");

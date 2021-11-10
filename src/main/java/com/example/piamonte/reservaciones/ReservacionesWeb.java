@@ -38,7 +38,7 @@ public Optional<Reservacion> getRservacion(@PathVariable("id") int idReservacion
 return servicios.getReservacion(idReservacion);
 }
 
-@PostMapping("/save")
+@PostMapping("/all")
 @ResponseStatus(HttpStatus.CREATED)
 public Reservacion save(@RequestBody Reservacion reservacion){
     System.out.print("reservacion");

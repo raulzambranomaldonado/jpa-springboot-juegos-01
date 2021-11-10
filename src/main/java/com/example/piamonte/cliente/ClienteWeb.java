@@ -26,7 +26,7 @@ public class ClienteWeb {
     
     @Autowired
     private ServiciosCliente servicios;
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Cliente> getAll(){
         return servicios.getAll();
     }
@@ -37,7 +37,7 @@ public Optional<Cliente> getCliente(@PathVariable("id") int idCliente){
 return servicios.getCliente(idCliente);
 }
 
-@PostMapping("/save")
+@PostMapping("/all")
 @ResponseStatus(HttpStatus.CREATED)
 public Cliente save(@RequestBody Cliente cliente){
     System.out.print("cliente");

@@ -38,7 +38,7 @@ public Optional<Mensaje> getGames(@PathVariable("id") int idMensaje){
 return servicios.getMensaje(idMensaje);
 }
 
-@PostMapping("/save")
+@PostMapping("/all")
 @ResponseStatus(HttpStatus.CREATED)
 public Mensaje save(@RequestBody Mensaje mensaje){
     System.out.print("message");
