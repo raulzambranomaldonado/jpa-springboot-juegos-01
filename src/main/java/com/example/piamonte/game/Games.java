@@ -33,14 +33,14 @@ public class Games {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     //@GeneratedValue
-    private Integer idGames;
+    private Integer id;
     private String developer;
     private Integer year;  
     private String name;
     private String description;
     
     @ManyToOne
-    @JoinColumn(name="id")
+    @JoinColumn(name="idCategory")
     @JsonIgnoreProperties("category")
     private Categoria  category;
 
@@ -52,12 +52,12 @@ public class Games {
     @JsonIgnoreProperties({"game","messages"})
     public List<Reservacion> reservations;
 
-    public Integer getIdGames() {
-        return idGames;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdGames(Integer idGames) {
-        this.idGames = idGames;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDeveloper() {
@@ -115,6 +115,8 @@ public class Games {
     public void setReservations(List<Reservacion> reservations) {
         this.reservations = reservations;
     }
+
+   
 
      
 

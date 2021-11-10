@@ -30,10 +30,10 @@ public class ServiciosGames {
     }
     
     public Games save(Games games){
-        if(games.getIdGames()==null){
+        if(games.getId()==null){
             return metodosCrud.save(games);
         }else{
-            Optional<Games> evt=metodosCrud.getGames(games.getIdGames());
+            Optional<Games> evt=metodosCrud.getGames(games.getId());
             if(evt.isEmpty()){
                 return metodosCrud.save(games);
             }else{
